@@ -15,8 +15,10 @@ export default function Home() {
 
   useEffect(() => {}, []);
 
-  function searchMoviesByName() {
-    console.log("Procurar filme.");
+  async function searchMoviesByName(movieName) {
+    const response = await fetch(`/api/search/?t=${movieName}`);
+    const responseData = await response.json();
+    setMoviesList(responseData);
   }
 
   return (
@@ -32,6 +34,10 @@ export default function Home() {
           variant="contained"
           disableElevation
           endIcon={<ManageSearchIcon />}
+          onClick={() => {
+            searchMoviesByName("rush hour");
+            console.log("Cliquei");
+          }}
         >
           Buscar
         </Button>
