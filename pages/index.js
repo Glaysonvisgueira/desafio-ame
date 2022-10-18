@@ -19,6 +19,7 @@ export default function Home() {
     const response = await fetch(`/api/search/?t=${movieName}`);
     const responseData = await response.json();
     setMoviesList(responseData);
+    console.log(response);
   }
 
   return (
@@ -35,7 +36,7 @@ export default function Home() {
           disableElevation
           endIcon={<ManageSearchIcon />}
           onClick={() => {
-            searchMoviesByName("rush hour");
+            searchMoviesByName("rush");
             console.log("Cliquei");
           }}
         >
