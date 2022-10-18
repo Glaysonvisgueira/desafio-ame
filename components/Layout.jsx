@@ -11,9 +11,9 @@ export default function Layout({ children }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh",
+        minHeight: "100vh",
         width: "100%",
-        background: "#ccc",
+        //background: "#ccc",
       }}
     >
       {children}
